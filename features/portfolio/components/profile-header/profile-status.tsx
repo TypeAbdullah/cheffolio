@@ -33,29 +33,30 @@ export function ProfileStatus({ emoji, quote }: ProfileStatusProps) {
     <button
       type="button"
       className={cn(
-        'avatar-ring bg-background group/status extend-touch-target absolute bottom-3 left-25 z-10 flex size-5 cursor-default items-center justify-center gap-1 text-xs select-none sm:bottom-3.5 sm:left-31.5 sm:size-6 sm:text-sm',
-        !isTouchDevice &&
-          quote &&
-          'hover:w-fit hover:pr-3 hover:pl-2.5 focus-visible:pr-3 focus-visible:pl-2.5',
-        isTouchDevice && isExpanded && quote && 'w-fit pr-2.5 pl-2'
+        'avatar-ring bg-background group/status extend-touch-target absolute bottom-3 left-25 z-10 flex cursor-default items-center text-xs select-none sm:bottom-3.5 sm:left-31.5 sm:text-sm'
       )}
       onClick={handleClick}
       onBlur={handleBlur}
       aria-pressed={isTouchDevice ? isExpanded : undefined}
       aria-label="GitHub status"
     >
-      <Twemoji aria-hidden="true">{emoji}</Twemoji>
+      <span className="flex size-5 shrink-0 items-center justify-center sm:size-6">
+        <Twemoji aria-hidden="true">{emoji}</Twemoji>
+      </span>
+
       {quote && (
         <span
           className={cn(
-            'text-foreground/80 hidden leading-none text-nowrap',
+            'block max-w-0 overflow-hidden leading-none text-nowrap opacity-0',
+            'transition-[max-width,opacity,translate] duration-200 ease-in-out',
             isTouchDevice
-              ? isExpanded && 'block'
-              : 'group-hover/status:block group-focus-visible/status:block'
+              ? isExpanded && 'max-w-xs opacity-100'
+              : 'group-hover/status:max-w-xs group-hover/status:translate-x-0.5 group-hover/status:opacity-100',
+            'group-focus-visible/status:max-w-xs group-focus-visible/status:translate-x-0.5 group-focus-visible/status:opacity-100'
           )}
           aria-label="Status quote"
         >
-          {quote}
+          <span className="text-foreground/80 block pr-2">{quote}</span>
         </span>
       )}
     </button>
