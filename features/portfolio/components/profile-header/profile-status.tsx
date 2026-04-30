@@ -41,7 +41,9 @@ export function ProfileStatus({ emoji, quote }: ProfileStatusProps) {
       aria-label="GitHub status"
     >
       <span className="flex size-5 shrink-0 items-center justify-center sm:size-6">
-        <Twemoji aria-hidden="true">{emoji}</Twemoji>
+        <Twemoji className="sm:translate-x-[-0.025em]" aria-hidden="true">
+          {emoji}
+        </Twemoji>
       </span>
 
       {quote && (
@@ -51,8 +53,8 @@ export function ProfileStatus({ emoji, quote }: ProfileStatusProps) {
             'transition-[max-width,opacity,translate] duration-200 ease-in-out',
             isTouchDevice
               ? isExpanded && 'max-w-xs opacity-100'
-              : 'group-hover/status:max-w-xs group-hover/status:translate-x-0.5 group-hover/status:opacity-100',
-            'group-focus-visible/status:max-w-xs group-focus-visible/status:translate-x-0.5 group-focus-visible/status:opacity-100'
+              : 'group-hover/status:max-w-xs group-hover/status:translate-x-px group-hover/status:opacity-100',
+            'group-focus-visible/status:max-w-xs group-focus-visible/status:translate-x-px group-focus-visible/status:opacity-100'
           )}
           aria-label="Status quote"
         >
