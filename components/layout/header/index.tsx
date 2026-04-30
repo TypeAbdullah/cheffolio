@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 import { GithubIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import { MAIN_NAV } from '@/config/site';
+import { MAIN_NAV, REPO_URL, UTM_PARAMS } from '@/config/site';
+import { addQueryParams } from '@/utils/url';
 
 import { DesktopNav } from './desktop-nav';
 import { SiteHeaderLogo } from './site-header-logo';
@@ -29,7 +30,7 @@ export function SiteHeader() {
         <CommandMenu enabledHotkeys />
         <Button size="icon" variant="ghost" asChild>
           <a
-            href="https://github.com/chef0111/cheffolio"
+            href={addQueryParams(REPO_URL, UTM_PARAMS)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open GitHub Repository"

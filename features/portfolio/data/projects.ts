@@ -1,3 +1,5 @@
+import { REPO_URL } from '@/config/site';
+
 import type { Project } from '../types/projects';
 
 const baseUrl = 'https://res.cloudinary.com/chef0111/image/upload';
@@ -116,7 +118,7 @@ export const PROJECTS: Project[] = [
     period: {
       start: '03.2026',
     },
-    link: 'https://github.com/chef0111/cheffolio',
+    link: REPO_URL,
     skills: [
       'Next.js 16',
       'TypeScript',

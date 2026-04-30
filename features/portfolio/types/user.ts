@@ -26,6 +26,7 @@ export type User = {
   /** Rich about section; supports Markdown */
   about: string;
   avatar: string;
+  socialLinks: Record<string, string>;
   /** Open Graph image URL for social sharing */
   ogImage: string;
   /** SEO keywords list for metadata */

@@ -33,6 +33,14 @@ export const USER: User = {
 `,
   avatar:
     'https://res.cloudinary.com/chef0111/image/upload/chef0111-avatar.webp',
+  socialLinks: {
+    x: 'https://x.com/cheff0111',
+    github: 'https://github.com/chef0111',
+    linkedin: 'https://linkedin.com/in/chef0111',
+    facebook: 'https://facebook.com/giabao.67.05',
+    discord: 'https://discord.com/users/chef.0111',
+    instagram: 'https://www.instagram.com/chef.0111',
+  },
   ogImage: 'https://res.cloudinary.com/chef0111/image/upload/ogImage.png',
   timeZone: 'Asia/Ho_Chi_Minh',
   keywords: [
