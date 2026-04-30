@@ -3,7 +3,8 @@ import { Suspense } from 'react';
 import { Brand } from '@/components/cheffolio/brand';
 import { GithubIcon, LinkedinIcon, XIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import { FOOTER_SLOGAN, UTM_PARAMS } from '@/config/site';
+import { FOOTER_SLOGAN, REPO_URL, UTM_PARAMS } from '@/config/site';
+import { USER } from '@/features/portfolio/data/user';
 import { addQueryParams } from '@/utils/url';
 
 import { ChainOfSlogan } from './chain-of-slogan';
@@ -39,10 +40,7 @@ export function Footer() {
             <p className="text-muted-foreground text-center font-mono text-sm text-balance">
               Source code available on{' '}
               <a
-                href={addQueryParams(
-                  'https://github.com/chef0111/cheffolio',
-                  UTM_PARAMS
-                )}
+                href={addQueryParams(REPO_URL, UTM_PARAMS)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-underline text-foreground font-medium"
@@ -75,17 +73,17 @@ export function Footer() {
 
 const socialLinks = [
   {
-    href: addQueryParams('https://x.com/cheff0111', UTM_PARAMS),
+    href: addQueryParams(USER.socialLinks.x, UTM_PARAMS),
     label: 'X',
     icon: <XIcon />,
   },
   {
-    href: addQueryParams('https://github.com/chef0111', UTM_PARAMS),
+    href: addQueryParams(USER.socialLinks.github, UTM_PARAMS),
     label: 'Github',
     icon: <GithubIcon />,
   },
   {
-    href: addQueryParams('https://www.linkedin.com/in/chef0111', UTM_PARAMS),
+    href: addQueryParams(USER.socialLinks.linkedin, UTM_PARAMS),
     label: 'Linkedin',
     icon: <LinkedinIcon />,
   },

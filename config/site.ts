@@ -67,6 +67,8 @@ export const UTM_PARAMS = {
   utm_source: 'giabao.dev',
 };
 
+export const REPO_URL = 'https://github.com/chef0111/cheffolio';
+
 export const GITHUB_USERNAME = 'chef0111';
 export const X_USERNAME = '@cheff0111';
 
