@@ -1,5 +1,7 @@
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import type { WebSite, WithContext } from 'schema-dts';
@@ -43,6 +45,7 @@ export const metadata: Metadata = {
     url: '/',
     type: 'profile',
     locale: 'en_US',
+    alternateLocale: ['vi_VN'],
     firstName: USER.firstName,
     lastName: USER.lastName,
     username: USER.username,
@@ -50,8 +53,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: SITE_INFO.ogImage,
-        width: 1200,
-        height: 630,
+        width: 1140,
+        height: 720,
         alt: SITE_INFO.name,
       },
     ],
@@ -145,6 +148,8 @@ export default function RootLayout({
           </TooltipProvider>
           <Toaster closeButton position="bottom-center" />
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

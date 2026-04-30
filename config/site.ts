@@ -9,7 +9,7 @@ import type { NavItem } from '@/components/layout/header/types/nav';
 import { USER } from '@/features/portfolio/data/user';
 
 export const SITE_INFO = {
-  name: 'Gia Bảo – dev portfolio',
+  name: USER.displayName,
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://giabao.dev',
   ogImage: USER.ogImage,
   description: 'A minimalist, shadcn/ui-inspired dev portfolio of @chef0111.',
