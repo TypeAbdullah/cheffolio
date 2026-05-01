@@ -42,10 +42,12 @@ export default function ThemeToggle() {
     else document.startViewTransition(switchTheme);
   }, [playToggle, switchTheme, isMobile]);
 
-  useHotkey('D', () => {
+  const toggleThemeHotkey = useCallback(() => {
     playToggle(0.25);
     switchTheme();
-  });
+  }, [playToggle, switchTheme]);
+
+  useHotkey('D', () => toggleThemeHotkey());
 
   return (
     <Tooltip>
