@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Brand } from '@/components/cheffolio/brand';
 import { GithubIcon, LinkedinIcon, XIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import { FOOTER_SLOGAN, REPO_URL, UTM_PARAMS } from '@/config/site';
+import { FOOTER_SLOGAN, GITHUB_REPO_URL, UTM_PARAMS } from '@/config/site';
 import { USER } from '@/features/portfolio/data/user';
 import { addQueryParams } from '@/utils/url';
 
@@ -40,7 +40,7 @@ export function Footer() {
             <p className="text-muted-foreground text-center font-mono text-sm text-balance">
               Source code available on{' '}
               <a
-                href={addQueryParams(REPO_URL, UTM_PARAMS)}
+                href={addQueryParams(GITHUB_REPO_URL, UTM_PARAMS)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-underline text-foreground font-medium"

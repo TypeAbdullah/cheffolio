@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     icon: [
       {
         url: 'https://res.cloudinary.com/chef0111/image/upload/favicon.ico',
-        sizes: '32x32',
+        sizes: '256x256',
       },
       {
         url: 'https://res.cloudinary.com/chef0111/image/upload/favicon-light.svg',
@@ -88,6 +88,12 @@ export const metadata: Metadata = {
       url: 'https://res.cloudinary.com/chef0111/image/upload/apple-touch-icon.png',
       type: 'image/png',
       sizes: '180x180',
+    },
+  },
+  robots: {
+    googleBot: {
+      'max-snippet': -1,
+      'max-image-preview': 'large',
     },
   },
 };

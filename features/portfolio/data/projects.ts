@@ -1,4 +1,4 @@
-import { REPO_URL } from '@/config/site';
+import { GITHUB_REPO_URL } from '@/config/site';
 
 import type { Project } from '../types/projects';
 
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     period: {
       start: '03.2026',
     },
-    link: REPO_URL,
+    link: GITHUB_REPO_URL,
     skills: [
       'Next.js 16',
       'TypeScript',

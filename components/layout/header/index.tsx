@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { GithubIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import { MAIN_NAV, REPO_URL, UTM_PARAMS } from '@/config/site';
+import { GITHUB_REPO_URL, MAIN_NAV, UTM_PARAMS } from '@/config/site';
 import { addQueryParams } from '@/utils/url';
 
 import { DesktopNav } from './desktop-nav';
@@ -30,7 +30,7 @@ export function SiteHeader() {
         <CommandMenu enabledHotkeys />
         <Button size="icon" variant="ghost" asChild>
           <a
-            href={addQueryParams(REPO_URL, UTM_PARAMS)}
+            href={addQueryParams(GITHUB_REPO_URL, UTM_PARAMS)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open GitHub Repository"

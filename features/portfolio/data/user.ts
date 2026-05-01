@@ -5,6 +5,7 @@ export const USER: User = {
   lastName: 'Lê',
   displayName: 'Gia Bảo',
   username: 'chef0111',
+  alternateName: ['Lê Trần Gia Bảo', 'chef0111', 'giabao', 'baoltg'],
   gender: 'male',
   pronouns: 'he/him',
   bio: 'Love coding catchy things :>',
@@ -24,6 +25,13 @@ export const USER: User = {
       company: 'UIT - VNUHCM',
       website: 'https://uit.edu.vn',
     },
+  ],
+  skills: [
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Web Frameworks',
+    'Fullstack Development',
   ],
   about: `
 - **Senior Student** passionate about web development, building modern, reliable, and maintainable applications.

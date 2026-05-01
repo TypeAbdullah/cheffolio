@@ -70,6 +70,11 @@ function getPageJsonLd(): WithContext<ProfilePage> {
       name: USER.displayName,
       identifier: USER.username,
       image: USER.avatar,
+      alternateName: USER.alternateName,
+      description: USER.bio,
+      jobTitle: USER.jobTitle,
+      sameAs: Object.values(USER.socialLinks),
+      knowsAbout: USER.skills,
     },
   };
 }

@@ -3,6 +3,7 @@ export type User = {
   lastName: string;
   displayName: string;
   username: string;
+  alternateName?: string[];
   gender: 'male' | 'female' | 'non-binary';
   /** e.g. "he/him", "she/her", "they/them" */
   pronouns: string;
@@ -22,6 +23,8 @@ export type User = {
     website: string;
     experienceId?: string;
   }[];
+  /** Skills and areas of expertise */
+  skills?: string[];
   resume?: string;
   /** Rich about section; supports Markdown */
   about: string;
