@@ -70,6 +70,7 @@ export const USER: User = {
     'giabao.dev portfolio',
     'gia bảo dev portfolio',
     'chef0111',
+    'chef0111 dev',
     '@chef0111',
     'codingaschef',
     'cheff0111',
