@@ -12,7 +12,8 @@ export const SITE_INFO = {
   name: USER.displayName,
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://giabao.dev',
   ogImage: USER.ogImage,
-  description: 'A minimalist, shadcn/ui-inspired dev portfolio of @chef0111.',
+  description:
+    'Gia Bảo · Student Software Engineer from Vietnam. Love coding catchy things.',
   keywords: USER.keywords,
 };
 
@@ -67,7 +68,7 @@ export const UTM_PARAMS = {
   utm_source: 'giabao.dev',
 };
 
-export const REPO_URL = 'https://github.com/chef0111/cheffolio';
+export const GITHUB_REPO_URL = 'https://github.com/chef0111/cheffolio';
 
 export const GITHUB_USERNAME = 'chef0111';
 export const X_USERNAME = '@cheff0111';
