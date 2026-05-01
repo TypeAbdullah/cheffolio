@@ -41,7 +41,7 @@ export function ProfileStatus({ emoji, quote }: ProfileStatusProps) {
       aria-label="GitHub status"
     >
       <span className="flex size-5 shrink-0 items-center justify-center sm:size-6">
-        <Twemoji className="sm:translate-x-[-0.025em]" aria-hidden="true">
+        <Twemoji className="sm:translate-y-[-0.025em]" aria-hidden="true">
           {emoji}
         </Twemoji>
       </span>
