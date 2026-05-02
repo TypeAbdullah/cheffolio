@@ -96,7 +96,7 @@ export function ProjectItem({
               height={25}
               width={25}
               x={12}
-              y={6}
+              y={7}
             />
           </div>
         </div>
