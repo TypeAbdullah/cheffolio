@@ -39,8 +39,8 @@ export function SocialLinkItem({ icon, title, href }: SocialLink) {
             className="stroke-border absolute inset-0 size-full"
             height={24}
             width={24}
-            x={-12}
-            y={4}
+            x={-14}
+            y={8}
           />
         </div>
       </div>
