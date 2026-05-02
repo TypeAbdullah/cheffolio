@@ -62,7 +62,6 @@ export const USER: User = {
     'gia bao',
     'gia bảo dev',
     'giabao dev',
-    'giabaodev',
     'giabao portfolio',
     'gia bảo portfolio',
     'giabaodev portfolio',
