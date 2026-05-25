@@ -28,11 +28,9 @@ export default function NotFoundPage() {
               </EmptyDescription>
             </EmptyHeader>
             <EmptyContent>
-              <Button asChild>
-                <Link href="/">
-                  <HomeIcon data-icon="inline-start" />
-                  Go Home
-                </Link>
+              <Button render={<Link href="/" />} nativeButton={false}>
+                <HomeIcon data-icon="inline-start" />
+                Go Home
               </Button>
             </EmptyContent>
           </Empty>

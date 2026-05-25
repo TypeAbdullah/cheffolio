@@ -51,18 +51,20 @@ export default function ThemeToggle() {
 
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-          className="active:scale-100"
-        >
-          <SunIcon className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-          <MoonIcon className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
+      <TooltipTrigger
+        render={
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="active:scale-100"
+          />
+        }
+      >
+        <SunIcon className="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+        <MoonIcon className="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+        <span className="sr-only">Toggle theme</span>
       </TooltipTrigger>
       <TooltipContent>
         <div className="flex items-center gap-2">

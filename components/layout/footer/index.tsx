@@ -20,20 +20,21 @@ export function Footer() {
               <Brand className="mr-2 h-4" />
               {socialLinks.map(({ href, label, icon }) => (
                 <Button
-                  asChild
                   key={label}
                   size="icon-sm"
                   variant="ghost"
                   className="text-muted-foreground hover:text-foreground"
+                  render={
+                    <a
+                      aria-label={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
+                  nativeButton={false}
                 >
-                  <a
-                    aria-label={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {icon}
-                  </a>
+                  {icon}
                 </Button>
               ))}
             </div>

@@ -1,28 +1,31 @@
+import { mergeProps } from '@base-ui/react/merge-props';
+import { useRender } from '@base-ui/react/use-render';
 import { LinkIcon } from 'lucide-react';
-import { Slot } from 'radix-ui';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
 
 function Prose({
   className,
-  asChild = false,
+  render,
   ...props
-}: React.ComponentProps<'div'> & {
-  asChild?: boolean;
-}) {
-  const Comp = asChild ? Slot.Root : 'div';
-
-  return (
-    <Comp
-      data-slot="prose"
-      className={cn(
-        'prose prose-chef prose-zinc dark:prose-invert max-w-none leading-normal',
-        className
-      )}
-      {...props}
-    />
-  );
+}: useRender.ComponentProps<'div'>) {
+  return useRender({
+    defaultTagName: 'div',
+    props: mergeProps<'div'>(
+      {
+        className: cn(
+          'prose prose-chef prose-zinc dark:prose-invert max-w-none leading-normal',
+          className
+        ),
+      },
+      props
+    ),
+    render,
+    state: {
+      slot: 'prose',
+    },
+  });
 }
 
 function ProseMono({

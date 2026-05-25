@@ -16,6 +16,7 @@ import { Loader } from '@/components/ui/loader';
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { GITHUB_USERNAME, UTM_PARAMS } from '@/config/site';
@@ -60,14 +61,14 @@ export function GitHubContributionGraph({
       blockMargin={blockMargin}
       blockRadius={blockRadius}
     >
-      <ContributionGraphCalendar
-        className="no-scrollbar px-2"
-        aria-label="GitHub contributions"
-      >
-        {({ activity, dayIndex, weekIndex }) => (
-          <Tooltip delayDuration={300}>
-            <TooltipTrigger asChild>
-              <g>
+      <TooltipProvider delay={300}>
+        <ContributionGraphCalendar
+          className="no-scrollbar px-2"
+          aria-label="GitHub contributions"
+        >
+          {({ activity, dayIndex, weekIndex }) => (
+            <Tooltip>
+              <TooltipTrigger render={<g />}>
                 <ContributionGraphBlock
                   activity={activity}
                   dayIndex={dayIndex}
@@ -80,17 +81,18 @@ export function GitHubContributionGraph({
                     'data-[level="4"]:fill-[#216e39] dark:data-[level="4"]:fill-[#39d353]'
                   )}
                 />
-              </g>
-            </TooltipTrigger>
-            <TooltipContent className="font-sans">
-              <p>
-                {activity.count} contribution{activity.count > 1 ? 's' : null}{' '}
-                on {format(new Date(activity.date), 'dd.MM.yyyy')}
-              </p>
-            </TooltipContent>
-          </Tooltip>
-        )}
-      </ContributionGraphCalendar>
+              </TooltipTrigger>
+              <TooltipContent className="font-sans">
+                <p>
+                  {activity.count} contribution
+                  {activity.count > 1 ? 's' : null} on{' '}
+                  {format(new Date(activity.date), 'dd.MM.yyyy')}
+                </p>
+              </TooltipContent>
+            </Tooltip>
+          )}
+        </ContributionGraphCalendar>
+      </TooltipProvider>
 
       <ContributionGraphFooter className="px-2">
         <ContributionGraphTotalCount>

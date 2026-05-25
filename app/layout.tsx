@@ -3,6 +3,7 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
+import { Geist } from 'next/font/google';
 import Script from 'next/script';
 import type { WebSite, WithContext } from 'schema-dts';
 
@@ -14,6 +15,8 @@ import { META_THEME_COLORS, SITE_INFO, X_USERNAME } from '@/config/site';
 import { ThemeProvider } from '@/context/theme-provider';
 import { USER } from '@/features/portfolio/data/user';
 import { cn } from '@/lib/utils';
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 function getWebSiteJsonLd(): WithContext<WebSite> {
   return {
@@ -127,7 +130,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(fontVariables, 'h-full antialiased')}
+      className={cn(
+        fontVariables,
+        'h-full antialiased',
+        'font-sans',
+        geist.variable
+      )}
       suppressHydrationWarning
     >
       <head>

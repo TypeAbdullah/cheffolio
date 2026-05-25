@@ -1,6 +1,6 @@
 'use client';
 
-import type { VariantProps } from 'class-variance-authority';
+import type { Button as ButtonPrimitive } from '@base-ui/react/button';
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import * as React from 'react';
@@ -12,12 +12,11 @@ import { cn } from '@/lib/utils';
 type CopyButtonBaseProps = Omit<
   React.ComponentPropsWithoutRef<typeof Button>,
   'children'
-> &
-  VariantProps<typeof buttonVariants> & {
-    copied?: boolean;
-    onCopiedChange?: (copied: boolean, content?: string) => void;
-    delay?: number;
-  };
+> & {
+  copied?: boolean;
+  onCopiedChange?: (copied: boolean, content?: string) => void;
+  delay?: number;
+};
 
 type TextCopyProps = CopyButtonBaseProps & {
   copyType?: 'text';
@@ -89,7 +88,7 @@ function CopyButton({
   });
 
   const handleCopy = React.useCallback(
-    async (e: React.MouseEvent<HTMLButtonElement>) => {
+    async (e: Parameters<NonNullable<ButtonPrimitive.Props['onClick']>>[0]) => {
       onClick?.(e);
       if (isCopied || !content) return;
 
@@ -118,7 +117,9 @@ function CopyButton({
   return (
     <Button
       data-slot="copy-button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn('group/copy-button', className)}
+      size={size}
+      variant={variant}
       onClick={handleCopy}
       aria-label={isCopied ? 'Copied' : 'Copy to clipboard'}
       aria-pressed={isCopied}

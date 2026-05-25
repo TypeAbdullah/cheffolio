@@ -1,4 +1,5 @@
-import { Slot } from 'radix-ui';
+import { mergeProps } from '@base-ui/react/merge-props';
+import { useRender } from '@base-ui/react/use-render';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -31,18 +32,22 @@ function PanelHeader({ className, ...props }: React.ComponentProps<'header'>) {
 
 function PanelTitle({
   className,
-  asChild = false,
+  render,
   ...props
-}: React.ComponentProps<'h2'> & { asChild?: boolean }) {
-  const Comp = asChild ? Slot.Root : 'h2';
-
-  return (
-    <Comp
-      data-slot="panel-title"
-      className={cn('text-3xl font-semibold tracking-tight', className)}
-      {...props}
-    />
-  );
+}: useRender.ComponentProps<'h2'>) {
+  return useRender({
+    defaultTagName: 'h2',
+    props: mergeProps<'h2'>(
+      {
+        className: cn('text-3xl font-semibold tracking-tight', className),
+      },
+      props
+    ),
+    render,
+    state: {
+      slot: 'panel-title',
+    },
+  });
 }
 
 function PanelTitleSup({ className, ...props }: React.ComponentProps<'sup'>) {

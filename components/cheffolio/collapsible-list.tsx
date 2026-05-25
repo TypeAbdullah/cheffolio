@@ -1,5 +1,4 @@
 import { ChevronDownIcon } from 'lucide-react';
-import { Slot } from 'radix-ui';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -26,16 +25,16 @@ export function CollapsibleList<T>({
   return (
     <Collapsible className={cn('group/collapsible', className)}>
       {items.slice(0, max).map((award, index) => (
-        <Slot.Root
+        <React.Fragment
           key={typeof keyExtractor === 'function' ? keyExtractor(award) : index}
         >
           {renderItem(award)}
-        </Slot.Root>
+        </React.Fragment>
       ))}
 
       <CollapsibleContent>
         {items.slice(max).map((award, index) => (
-          <Slot.Root
+          <div
             key={
               typeof keyExtractor === 'function'
                 ? keyExtractor(award)
@@ -44,24 +43,26 @@ export function CollapsibleList<T>({
             className="border-line border-b"
           >
             {renderItem(award)}
-          </Slot.Root>
+          </div>
         ))}
       </CollapsibleContent>
 
       {items.length > max && (
         <div className="flex h-12 items-center justify-center pb-px">
-          <CollapsibleTrigger asChild>
-            <Button className="gap-2 border-none pr-2.5 pl-3" size="sm">
-              <span className="hidden group-data-closed/collapsible:block">
-                Show More
-              </span>
+          <CollapsibleTrigger
+            render={
+              <Button className="gap-2 border-none pr-2.5 pl-3" size="sm" />
+            }
+          >
+            <span className="hidden group-data-closed/collapsible:block">
+              Show More
+            </span>
 
-              <span className="hidden group-data-open/collapsible:block">
-                Show Less
-              </span>
+            <span className="hidden group-data-open/collapsible:block">
+              Show Less
+            </span>
 
-              <ChevronDownIcon className="group-data-open/collapsible:rotate-180" />
-            </Button>
+            <ChevronDownIcon className="group-data-open/collapsible:rotate-180" />
           </CollapsibleTrigger>
         </div>
       )}

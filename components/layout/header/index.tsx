@@ -28,15 +28,20 @@ export function SiteHeader() {
       <div className="flex items-center gap-2 *:first:mr-2 max-sm:*:data-[slot=command-menu-trigger]:hidden">
         <DesktopNav items={MAIN_NAV} />
         <CommandMenu enabledHotkeys />
-        <Button size="icon" variant="ghost" asChild>
-          <a
-            href={addQueryParams(GITHUB_REPO_URL, UTM_PARAMS)}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open GitHub Repository"
-          >
-            <GithubIcon aria-hidden="true" />
-          </a>
+        <Button
+          size="icon"
+          variant="ghost"
+          render={
+            <a
+              href={addQueryParams(GITHUB_REPO_URL, UTM_PARAMS)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub Repository"
+            />
+          }
+          nativeButton={false}
+        >
+          <GithubIcon aria-hidden="true" />
         </Button>
         <ThemeToggle />
       </div>
