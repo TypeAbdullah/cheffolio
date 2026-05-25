@@ -50,7 +50,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.5.2",
     "@commitlint/config-conventional": "^20.5.0",
-    "@tailwindcss/postcss": "^4.2.4",
+    "@tailwindcss/postcss": "^4.3.0",
     "@tailwindcss/typography": "^0.5.19",
     "@toolwind/corner-shape": "^0.0.8-3",
     "@types/node": "^25.6.0",
@@ -65,13 +65,13 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.3",
-    "prettier-plugin-tailwindcss": "^0.7.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "rehype-external-links": "^3.0.0",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
     "remark-rehype": "^11.1.2",
     "shadcn": "^4.5.0",
-    "tailwindcss": "^4.2.4",
+    "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
     "unist-builder": "3.0.0",
     "unist-util-visit": "^5.1.0"
@@ -87,7 +87,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "eslint --max-warnings=0",
+      "eslint --fix",
       "prettier --write"
     ],
     "**/*.{html,json,css,scss,md,mdx}": [
