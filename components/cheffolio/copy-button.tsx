@@ -1,5 +1,6 @@
 'use client';
 
+import type { Button as ButtonPrimitive } from '@base-ui/react/button';
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import * as React from 'react';
@@ -87,7 +88,7 @@ function CopyButton({
   });
 
   const handleCopy = React.useCallback(
-    async (e: React.MouseEvent<HTMLButtonElement>) => {
+    async (e: Parameters<NonNullable<ButtonPrimitive.Props['onClick']>>[0]) => {
       onClick?.(e);
       if (isCopied || !content) return;
 
