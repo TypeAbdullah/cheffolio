@@ -224,17 +224,18 @@ function MobileNavItems({
             variant={active ? 'secondary' : 'ghost'}
             size="icon"
             className="extend-touch-target rounded-xl active:scale-100"
-            asChild
+            render={
+              <Link
+                href={link.href}
+                aria-label={link.title}
+                title={link.title}
+                onClick={onLinkClick}
+                data-slot="mobile-nav-link"
+              />
+            }
+            nativeButton={false}
           >
-            <Link
-              href={link.href}
-              aria-label={link.title}
-              title={link.title}
-              onClick={onLinkClick}
-              data-slot="mobile-nav-link"
-            >
-              {Icon ? <Icon className="size-5" /> : null}
-            </Link>
+            {Icon ? <Icon className="size-5" /> : null}
           </Button>
         );
       })}

@@ -112,8 +112,8 @@ export function LocalTime({ timeZone }: CurrentLocalTimeItemProps) {
 
       <IntroItemContent aria-label={`Current local time: ${timeString}`}>
         <Tooltip>
-          <TooltipTrigger asChild>
-            <span className="cursor-default">{timeString}</span>
+          <TooltipTrigger render={<span className="cursor-default" />}>
+            {timeString}
           </TooltipTrigger>
           <TooltipContent>{timeZone}</TooltipContent>
         </Tooltip>
