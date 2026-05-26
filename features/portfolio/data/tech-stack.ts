@@ -57,6 +57,13 @@ export const TECH_STACK: TechStack[] = [
     theme: true,
   },
   {
+    key: 'expo',
+    title: 'Expo',
+    href: 'https://expo.dev/',
+    categories: ['Framework'],
+    theme: true,
+  },
+  {
     key: 'tanstack',
     title: 'TanStack',
     href: 'https://tanstack.com/',
@@ -67,7 +74,7 @@ export const TECH_STACK: TechStack[] = [
     key: 'react-router',
     title: 'React Router',
     href: 'https://reactrouter.com/',
-    categories: ['Library', 'Navigation', 'Framework'],
+    categories: ['Library', 'Framework'],
     theme: true,
   },
   {
@@ -164,12 +171,6 @@ export const TECH_STACK: TechStack[] = [
     title: 'GCP',
     href: 'https://cloud.google.com/',
     categories: ['Cloud Platform'],
-  },
-  {
-    key: 'figma',
-    title: 'Figma',
-    href: 'https://www.figma.com/',
-    categories: ['Tools', 'Design'],
   },
   {
     key: 'claude',
