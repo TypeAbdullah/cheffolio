@@ -20,7 +20,7 @@ import { urlToName } from '@/utils/url';
 
 import { EmailItem } from './email-item';
 import { JobItem } from './job-item';
-import { LocalTime } from './local-item';
+import { LocalTimeItem } from './local-time-item';
 import { PhoneItem } from './phone-item';
 import { ResumeItem } from './resume-item';
 
@@ -72,7 +72,7 @@ export function Overview() {
             </IntroItemContent>
           </IntroItem>
 
-          <LocalTime timeZone={USER.timeZone} />
+          <LocalTimeItem timeZone={USER.timeZone} />
           <PhoneItem phoneNumber={USER.phoneNumber} />
           <EmailItem email={USER.email} />
 
