@@ -2,6 +2,7 @@
 
 import { useHotkey } from '@tanstack/react-hotkeys';
 import { PhoneIcon } from 'lucide-react';
+import { useId } from 'react';
 import { toast } from 'sonner';
 import { useWebHaptics } from 'web-haptics/react';
 
@@ -16,11 +17,14 @@ import { useIsClient } from '@/hooks/use-is-client';
 import { copyText } from '@/utils/copy';
 import { decodePhoneNumber, formatPhoneNumber } from '@/utils/string';
 
+import { RevealEncodedText } from './reveal-encoded-text';
+
 type PhoneItemProps = {
   phoneNumber: string;
 };
 
 export function PhoneItem({ phoneNumber }: PhoneItemProps) {
+  const id = useId();
   const isClient = useIsClient();
   const phoneNumberDecoded = decodePhoneNumber(phoneNumber);
   const phoneNumberFormatted = formatPhoneNumber(phoneNumberDecoded);
@@ -44,10 +48,12 @@ export function PhoneItem({ phoneNumber }: PhoneItemProps) {
 
       <IntroItemContent>
         <IntroItemLink
+          id={`phone-${id}`}
           href={isClient ? `tel:${phoneNumberDecoded}` : '#'}
           aria-label={
             isClient ? `Call ${phoneNumberFormatted}` : 'Phone number'
           }
+          suppressHydrationWarning
         >
           {isClient ? phoneNumberFormatted : '[Phone protected]'}
         </IntroItemLink>
@@ -64,6 +70,8 @@ export function PhoneItem({ phoneNumber }: PhoneItemProps) {
           }}
         />
       </div>
+
+      <RevealEncodedText id={`phone-${id}`} text={btoa(phoneNumberFormatted)} />
     </IntroItem>
   );
 }

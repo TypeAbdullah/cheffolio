@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'group/default bg-[linear-gradient(to_bottom,color-mix(in_srgb,var(--accent-foreground)_80%,transparent),var(--primary-accent))] dark:bg-[linear-gradient(to_top,var(--primary),var(--primary-accent))] ring-primary ring-1 border-none dark:ring-ring text-primary-foreground isolate shadow-none',
+          'bg-[linear-gradient(to_bottom,color-mix(in_srgb,var(--accent-foreground)_80%,transparent),var(--primary-accent))] dark:bg-[linear-gradient(to_top,var(--primary),var(--primary-accent))] ring-primary ring-1 border-none dark:ring-ring text-primary-foreground shadow-none',
         outline:
           'border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50',
         secondary:
@@ -56,17 +56,7 @@ function Button({
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      {variant === 'default' ? (
-        <>
-          <span
-            data-slot="button-bg"
-            className="dark:bg-primary absolute inset-[1.5px] top-0.5 -z-10 flex rounded-[calc(var(--btn-radius)-1.5px)] bg-[linear-gradient(to_bottom,var(--primary),var(--primary-accent))] transition-all group-active/default:top-[1.5px] active:top-[1.5px]"
-          />
-          {children}
-        </>
-      ) : (
-        children
-      )}
+      {children}
     </ButtonPrimitive>
   );
 }

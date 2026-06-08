@@ -36,12 +36,14 @@ function CommandDialog({
   children,
   className,
   showCloseButton = false,
+  modal = true,
   ...props
 }: Omit<React.ComponentProps<typeof Dialog>, 'children'> & {
   title?: string;
   description?: string;
   className?: string;
   showCloseButton?: boolean;
+  modal?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -51,14 +53,17 @@ function CommandDialog({
         <DialogDescription>{description}</DialogDescription>
       </DialogHeader>
       <DialogContent
+        modal={modal}
         className={cn(
           'bg-popover top-1/2 max-w-lg -translate-y-1/2 overflow-hidden rounded-xl! p-0 max-sm:top-16 max-sm:translate-y-0 sm:max-w-lg',
+          'data-modal=false:ring-0',
           className
         )}
         showCloseButton={showCloseButton}
       >
         <Command
           className={cn(
+            'bg-accent/50 dark:bg-popover',
             '**:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-input-wrapper]_svg]:size-5 **:[[cmdk-input]]:h-10',
             '**:[[cmdk-group]]:px-2',
             '**:[[cmdk-group-heading]]:text-muted-foreground **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:font-medium',

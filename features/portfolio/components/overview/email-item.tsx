@@ -2,6 +2,7 @@
 
 import { useHotkey } from '@tanstack/react-hotkeys';
 import { MailIcon } from 'lucide-react';
+import { useId } from 'react';
 import { toast } from 'sonner';
 import { useWebHaptics } from 'web-haptics/react';
 
@@ -16,11 +17,14 @@ import { useIsClient } from '@/hooks/use-is-client';
 import { copyText } from '@/utils/copy';
 import { decodeEmail } from '@/utils/string';
 
+import { RevealEncodedText } from './reveal-encoded-text';
+
 type EmailItemProps = {
   email: string;
 };
 
 export function EmailItem({ email }: EmailItemProps) {
+  const id = useId();
   const isClient = useIsClient();
   const emailDecoded = decodeEmail(email);
 
@@ -43,10 +47,12 @@ export function EmailItem({ email }: EmailItemProps) {
 
       <IntroItemContent>
         <IntroItemLink
+          id={`email-${id}`}
           href={isClient ? `mailto:${emailDecoded}` : '#'}
           aria-label={
             isClient ? `Send email to ${emailDecoded}` : 'Email address'
           }
+          suppressHydrationWarning
         >
           {isClient ? emailDecoded : '[Email protected]'}
         </IntroItemLink>
@@ -63,6 +69,8 @@ export function EmailItem({ email }: EmailItemProps) {
           }}
         />
       </div>
+
+      <RevealEncodedText id={`email-${id}`} text={email} />
     </IntroItem>
   );
 }
