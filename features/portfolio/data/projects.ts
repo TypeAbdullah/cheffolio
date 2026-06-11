@@ -142,7 +142,16 @@ across multiple arenas with positive feedback from organizers and athletes.
       end: '06.2026',
     },
     link: 'https://github.com/chef0111/standup-log',
-    skills: ['Expo', 'Supabase', 'TypeScript', 'Nativewind', 'Claude', 'EAS'],
+    skills: [
+      'Expo SDK 55',
+      'Supabase',
+      'TypeScript',
+      'Nativewind',
+      'PostgreSQL',
+      'GitHub',
+      'Claude',
+      'EAS',
+    ],
     description: `**StandupLog** — An AI memory aid for busy & smart devs.
 - Syncs commit and pull request metadata from selected GitHub repositories, surfacing shipped vs. in-progress work per workday.
 - AI-drafted standup updates (What I did, Focusing on, Blockers) with a markdown editor for full developer control before copying.
