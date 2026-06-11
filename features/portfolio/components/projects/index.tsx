@@ -28,7 +28,9 @@ export function Projects() {
         <DecorIcon className="mb-px size-4" position="bottom-right" />
         <CollapsibleList
           items={PROJECTS}
-          max={5}
+          max={3}
+          triggerClassName="mt-2"
+          keyExtractor={(item) => item.id}
           renderItem={(item) => <ProjectItem project={item} />}
         />
       </PanelContent>

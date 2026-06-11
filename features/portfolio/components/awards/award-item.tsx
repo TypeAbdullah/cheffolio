@@ -109,7 +109,7 @@ export function AwardItem({
       </div>
 
       {canExpand && (
-        <CollapsibleContent className="sm:data-[state=closed]:animate-collapsible-up sm:data-[state=open]:animate-collapsible-down overflow-hidden">
+        <CollapsibleContent>
           <Prose className="border-line border-t p-4">
             <Markdown>{award.description}</Markdown>
           </Prose>

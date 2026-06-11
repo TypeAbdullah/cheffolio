@@ -16,6 +16,7 @@ import { Tag } from '@/components/ui/tag';
 import { Prose } from '@/components/ui/typography';
 import { UTM_PARAMS } from '@/config/site';
 import type { Project } from '@/features/portfolio/types/projects';
+import { cn } from '@/lib/utils';
 import { addQueryParams } from '@/utils/url';
 
 import { ProjectLink } from './project-link';
@@ -32,8 +33,11 @@ export function ProjectItem({
   const isSinglePeriod = end === start;
 
   return (
-    <Collapsible className={className} defaultOpen={project.isExpanded}>
-      <div className="hover:bg-muted-accent active:bg-muted-accent bg-accent/50 dark:bg-muted/20 m-2 flex items-stretch rounded-lg border transition-colors">
+    <Collapsible
+      className={cn('mx-2 mt-2', className)}
+      defaultOpen={project.isExpanded}
+    >
+      <div className="hover:bg-muted-accent active:bg-muted-accent bg-accent/50 dark:bg-muted/20 flex items-stretch rounded-lg border transition-colors">
         {project.logo ? (
           <div className="bg-background m-1.5 mr-0 flex items-center rounded-md border">
             <Image
@@ -102,7 +106,7 @@ export function ProjectItem({
         </div>
       </div>
 
-      <CollapsibleContent className="sm:data-[state=closed]:animate-collapsible-up sm:data-[state=open]:animate-collapsible-down overflow-hidden">
+      <CollapsibleContent>
         <div className="border-line space-y-4 p-4 pt-2">
           {project.description && (
             <Prose>
