@@ -101,7 +101,7 @@ export function ExperiencePositionItem({
         </div>
       </CollapsibleTrigger>
 
-      <CollapsibleContent className="sm:data-[state=closed]:animate-collapsible-up sm:data-[state=open]:animate-collapsible-down overflow-hidden">
+      <CollapsibleContent>
         {position.description && (
           <Prose className="pt-2 pl-9 text-pretty">
             <Markdown>{position.description}</Markdown>
