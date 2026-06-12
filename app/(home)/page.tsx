@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import type { ProfilePage, WithContext } from 'schema-dts';
 
 import { TailwindSeparator } from '@/components/cheffolio/tailwind-separator';
-import { Footer } from '@/components/layout/footer';
 import { About } from '@/features/portfolio/components/about';
 import { Awards } from '@/features/portfolio/components/awards';
 import { Experiences } from '@/features/portfolio/components/experiences';
@@ -53,8 +52,6 @@ export default function Page() {
 
         <Awards />
         <TailwindSeparator />
-
-        <Footer />
       </main>
     </>
   );

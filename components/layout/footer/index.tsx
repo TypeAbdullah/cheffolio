@@ -10,7 +10,7 @@ import { addQueryParams } from '@/utils/url';
 import { ChainOfSlogan } from './chain-of-slogan';
 import { FooterCopyright } from './copyright';
 
-export function Footer() {
+export function SiteFooter() {
   return (
     <footer className="relative" aria-label="Site footer">
       <div className="border-line mx-auto max-w-4xl border-x px-4">
