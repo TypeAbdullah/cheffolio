@@ -34,10 +34,10 @@ export const USER: User = {
     'Fullstack Development',
   ],
   about: `
-- **Senior Student** passionate about web development, building modern, reliable, and maintainable applications.
-- Experienced with frameworks such as **Next.js** and **TanStack Start**, with a solid grasp of modern frontend architecture and best practices.
-- Focused on high-performance, scalable, and user-centered applications, with attention to usability and clean design.
-- Creator of [TKU Sparring System](https://tku-sparring.vercel.app/): User-friendly web application for managing Taekwondo sparring matches.
+- Final-year student with a strong passion for web development.
+- Hands-on experience with SSR-driven frameworks such as **Next.js** and **TanStack Start**.
+- Focused on high-performance and user-centric applications, with attention to scalability and clean design.
+- Creator of [TKU Sparring System](https://tku-sparring.vercel.app/): A modern, user-friendly web application for managing Taekwondo tournaments.
 `,
   avatar:
     'https://res.cloudinary.com/chef0111/image/upload/chef0111-avatar.webp',
