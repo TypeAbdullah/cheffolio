@@ -46,7 +46,6 @@ import { decodeEmail, decodePhoneNumber } from '@/utils/string';
 import { addQueryParams } from '@/utils/url';
 
 import { Brand } from './brand';
-import { ScrollFadeEffect } from './scroll-fade-effect';
 
 type CommandLinkItem = {
   title: string;
@@ -157,17 +156,17 @@ export function CommandMenu({
       >
         <CommandMenuInput />
 
-        <CommandList className="bg-background dark:bg-background/50 mx-1 min-h-80 rounded-xl border">
-          <CommandEmpty>
-            <Empty className="gap-2">
-              <EmptyMedia variant="icon">
-                <ServerIcon />
-              </EmptyMedia>
-              <EmptyTitle>No results found</EmptyTitle>
-            </Empty>
-          </CommandEmpty>
+        <div className="bg-background ring-border mx-1 rounded-xl ring-1">
+          <CommandList className="bg-background dark:bg-background/50 scroll-fade min-h-80 rounded-xl">
+            <CommandEmpty>
+              <Empty className="gap-2">
+                <EmptyMedia variant="icon">
+                  <ServerIcon />
+                </EmptyMedia>
+                <EmptyTitle>No results found</EmptyTitle>
+              </Empty>
+            </CommandEmpty>
 
-          <ScrollFadeEffect className="no-scrollbar h-79 w-full">
             <CommandLinkGroup
               heading="Portfolio"
               links={PORTFOLIO_LINKS}
@@ -231,8 +230,8 @@ export function CommandMenu({
                 System
               </CommandItem>
             </CommandGroup>
-          </ScrollFadeEffect>
-        </CommandList>
+          </CommandList>
+        </div>
 
         <CommandMenuFooter />
       </CommandDialog>
