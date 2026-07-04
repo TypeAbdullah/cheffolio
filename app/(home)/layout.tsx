@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { SiteFooter } from '@/components/layout/footer';
 import { SiteHeader } from '@/components/layout/header';
 import { SiteFooterNav } from '@/components/layout/navigation/site-footer-nav';
+import { cn } from '@/lib/utils';
 
 const ScrollToTop = dynamic(() =>
   import('@/components/cheffolio/scroll-to-top').then((mod) => mod.ScrollToTop)
@@ -14,15 +15,43 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <SiteHeader />
       <main className="max-w-screen overflow-x-hidden px-2">{children}</main>
       <SiteFooter />
-      <div
-        className="scroll-fade-effect-bottom pointer-events-none fixed inset-x-0 -bottom-0.5 z-50"
-        aria-hidden
-      >
-        <div className="to-background h-(--fade-bottom-height) bg-linear-to-b from-transparent mask-linear-[to_top,var(--background)_25%,transparent] backdrop-blur-[1px]" />
-        <div className="bg-background pb-[env(safe-area-inset-bottom,0)]" />
-      </div>
+      <ScrollFadeOverlay align="top" />
+      <ScrollFadeOverlay align="bottom" />
       <SiteFooterNav />
       <ScrollToTop />
+    </div>
+  );
+}
+
+function ScrollFadeOverlay({ align }: { align: 'top' | 'bottom' }) {
+  const isTop = align === 'top';
+
+  return (
+    <div
+      className={cn(
+        'pointer-events-none fixed inset-x-0 z-50',
+        isTop
+          ? 'scroll-fade-effect-top -top-0.5'
+          : 'scroll-fade-effect-bottom -bottom-0.5'
+      )}
+      aria-hidden
+    >
+      <div
+        className={cn(
+          'to-background from-transparent backdrop-blur-[1px]',
+          isTop
+            ? 'h-(--fade-top-height) bg-linear-to-t mask-linear-[to_bottom,var(--background)_25%,transparent]'
+            : 'h-(--fade-bottom-height) bg-linear-to-b mask-linear-[to_top,var(--background)_25%,transparent]'
+        )}
+      />
+      <div
+        className={cn(
+          'bg-background',
+          isTop
+            ? 'pb-[env(safe-area-inset-top,0)]'
+            : 'pb-[env(safe-area-inset-bottom,0)]'
+        )}
+      />
     </div>
   );
 }
