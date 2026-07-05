@@ -15,8 +15,11 @@ export type User = {
   phoneNumber: string;
   /** base64 encoded (https://t.io.vn/base64-string-converter) */
   email: string;
+  /** Personal website URL */
   website: string;
+  /** Job title */
   jobTitle: string;
+  /** Jobs, input as array of objects */
   jobs: {
     title: string;
     company: string;
@@ -25,7 +28,10 @@ export type User = {
   }[];
   /** Skills and areas of expertise */
   skills?: string[];
+  /** Resume URL */
   resume?: string;
+  /** Resume download URL */
+  resumeDownloadUrl?: string;
   /** Rich about section; supports Markdown */
   about: string;
   avatar: string;

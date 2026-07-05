@@ -7,7 +7,9 @@ import {
   IntroItemLink,
 } from '@/components/cheffolio/intro-item';
 import { Button } from '@/components/ui/button';
+import { UTM_PARAMS } from '@/config/site';
 import { USER } from '@/features/portfolio/data/user';
+import { addQueryParams } from '@/utils/url';
 
 export function ResumeItem() {
   return (
@@ -18,7 +20,7 @@ export function ResumeItem() {
 
       <IntroItemContent>
         <IntroItemLink
-          href={USER.resume}
+          href={addQueryParams(USER.resume!, UTM_PARAMS)}
           aria-label="Personal resume"
           target="_blank"
           rel="noopener noreferrer"
@@ -32,6 +34,8 @@ export function ResumeItem() {
           variant="ghost"
           size="icon-xs"
           className="text-muted-foreground hover:text-foreground"
+          render={<a href={USER.resumeDownloadUrl} rel="noopener noreferrer" />}
+          nativeButton={false}
         >
           <DownloadIcon />
         </Button>
