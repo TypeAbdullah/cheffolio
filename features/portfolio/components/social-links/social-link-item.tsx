@@ -7,13 +7,21 @@ import type { SocialLink } from '@/features/portfolio/types/social-links';
 import { cn } from '@/lib/utils';
 import { addQueryParams } from '@/utils/url';
 
-export function SocialLinkItem({ icon, title, href }: SocialLink) {
+type SocialLinkItemProps = SocialLink & {
+  className?: string;
+};
+
+export function SocialLinkItem({
+  icon,
+  title,
+  href,
+  className,
+}: SocialLinkItemProps) {
   return (
     <a
       className={cn(
         'group hover:bg-accent-muted active:bg-accent-muted relative flex items-center gap-4 p-4 pr-2 transition-[background-color] ease-out',
-        'max-md:nth-[2n+1]:screen-line-top max-md:nth-[2n+1]:screen-line-bottom',
-        'md:nth-[3n+1]:screen-line-top md:nth-[3n+1]:screen-line-bottom'
+        className
       )}
       href={addQueryParams(href, UTM_PARAMS)}
       target="_blank"

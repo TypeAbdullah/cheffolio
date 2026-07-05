@@ -13,7 +13,10 @@ import { ProjectItem } from './project-item';
 
 export function Projects() {
   return (
-    <Panel id="projects">
+    <Panel
+      id="projects"
+      className="screen-line-bottom-none screen-line-top-none"
+    >
       <PanelHeader>
         <PanelTitle>
           Projects
@@ -24,8 +27,8 @@ export function Projects() {
       <PanelContent className="relative px-0 py-px">
         <DecorIcon className="size-4" position="top-left" />
         <DecorIcon className="size-4" position="top-right" />
-        <DecorIcon className="mb-px size-4" position="bottom-left" />
-        <DecorIcon className="mb-px size-4" position="bottom-right" />
+        <DecorIcon className="size-4" position="bottom-left" />
+        <DecorIcon className="size-4" position="bottom-right" />
         <CollapsibleList
           items={PROJECTS}
           max={3}

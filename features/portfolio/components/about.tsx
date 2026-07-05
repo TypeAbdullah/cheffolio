@@ -13,9 +13,9 @@ import { GitHubContributions } from './github-contributions';
 
 export function About() {
   return (
-    <Panel id="about" className="relative">
-      <DecorIcon className="mb-px size-4" position="bottom-left" />
-      <DecorIcon className="mb-px size-4" position="bottom-right" />
+    <Panel id="about" className="screen-line-bottom-none relative">
+      <DecorIcon className="size-4" position="bottom-left" />
+      <DecorIcon className="size-4" position="bottom-right" />
 
       <PanelHeader className="relative">
         <PanelTitle>About</PanelTitle>

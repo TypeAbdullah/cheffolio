@@ -19,7 +19,7 @@ const SORTED_AWARDS = [...AWARDS].sort((a, b) => {
 
 export function Awards() {
   return (
-    <Panel id="awards">
+    <Panel id="awards" className="screen-line-bottom-none screen-line-top-none">
       <PanelHeader>
         <PanelTitle>
           Honors & Awards
@@ -28,13 +28,15 @@ export function Awards() {
       </PanelHeader>
 
       <PanelContent className="relative p-0">
-        <DecorIcon className="mb-px size-4" position="bottom-left" />
-        <DecorIcon className="mb-px size-4" position="bottom-right" />
+        <DecorIcon className="size-4" position="bottom-left" />
+        <DecorIcon className="size-4" position="bottom-right" />
         <CollapsibleList
           items={SORTED_AWARDS}
           max={3}
           keyExtractor={(item) => item.id}
-          renderItem={(item) => <AwardItem className="relative" award={item} />}
+          renderItem={(item) => (
+            <AwardItem className="border-line relative border-t" award={item} />
+          )}
         />
       </PanelContent>
     </Panel>

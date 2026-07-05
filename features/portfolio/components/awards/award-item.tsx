@@ -115,8 +115,6 @@ export function AwardItem({
           </Prose>
         </CollapsibleContent>
       )}
-
-      <Separator className="bg-line w-full" />
     </Collapsible>
   );
 }
