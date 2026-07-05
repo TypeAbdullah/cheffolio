@@ -19,6 +19,10 @@ export const USER: User = {
   email: 'bGV0cmFuZ2lhYmFvMTRAZ21haWwuY29t', // base64 encoded
   website: 'https://giabao.dev',
   jobTitle: 'Senior Student',
+  resume:
+    'https://drive.google.com/file/d/1bvHjow-2ejrvvzK8hkEOuYexJ5q4gigv/view',
+  resumeDownloadUrl:
+    'https://drive.usercontent.google.com/u/1/uc?id=1bvHjow-2ejrvvzK8hkEOuYexJ5q4gigv&export=download',
   jobs: [
     {
       title: 'Senior Student',

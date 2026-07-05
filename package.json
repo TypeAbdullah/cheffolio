@@ -13,8 +13,10 @@
     "build": "next build",
     "start": "portless cheffolio next start",
     "next": "next build && portless cheffolio next start",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix",
+    "lint": "eslint . --cache --cache-location .eslintcache",
+    "lint:fix": "eslint --fix . --cache --cache-location .eslintcache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx}\" --cache",
+    "format:write": "prettier --write \"**/*.{ts,tsx,md,mdx}\" --cache",
     "check-types": "tsc --noEmit --pretty",
     "upgrade:next": "npm exec @next/codemod@latest upgrade latest",
     "upgrade:tailwind": "npm exec @tailwindcss/upgrade@latest",
@@ -77,22 +79,8 @@
     "unist-builder": "3.0.0",
     "unist-util-visit": "^5.1.0"
   },
-  "overrides": {
+  "resolutions": {
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "**/*.{html,json,css,scss,md,mdx}": [
-      "prettier --write"
-    ]
   }
 }

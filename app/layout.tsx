@@ -14,6 +14,7 @@ import { fontVariables } from '@/config/font';
 import { META_THEME_COLORS, SITE_INFO, X_USERNAME } from '@/config/site';
 import { ThemeProvider } from '@/context/theme-provider';
 import { USER } from '@/features/portfolio/data/user';
+import { JsonLdScript } from '@/lib/json-ld';
 import { cn } from '@/lib/utils';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
@@ -142,12 +143,7 @@ export default function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {darkModeScript}
         </Script>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getWebSiteJsonLd()).replace(/</g, '\\u003c'),
-          }}
-        />
+        <JsonLdScript data={getWebSiteJsonLd()} />
       </head>
       <body className="bg-background flex min-h-dvh flex-col overflow-x-hidden">
         <ThemeProvider

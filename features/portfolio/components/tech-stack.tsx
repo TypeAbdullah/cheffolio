@@ -19,7 +19,7 @@ export function TechStack() {
   const baseUrl = 'https://res.cloudinary.com/chef0111/image/upload/v1';
 
   return (
-    <Panel id="stack">
+    <Panel id="stack" className="screen-line-bottom-none">
       <PanelHeader className="relative">
         <PanelTitle>Tech Stack</PanelTitle>
       </PanelHeader>
@@ -27,8 +27,8 @@ export function TechStack() {
       <PanelContent className="relative mx-auto">
         <DecorIcon className="size-4" position="top-left" />
         <DecorIcon className="size-4" position="top-right" />
-        <DecorIcon className="mb-px size-4" position="bottom-left" />
-        <DecorIcon className="mb-px size-4" position="bottom-right" />
+        <DecorIcon className="size-4" position="bottom-left" />
+        <DecorIcon className="size-4" position="bottom-right" />
 
         <ul className="grid grid-cols-[repeat(auto-fit,minmax(32px,max-content))] justify-center gap-4 select-none">
           {TECH_STACK.map((tech) => {

@@ -157,6 +157,14 @@
   @apply after:bg-line relative after:absolute after:bottom-0 after:left-[-100vw] after:-z-1 after:h-px after:w-[200vw];
 }
 
+@utility screen-line-top-none {
+  @apply before:content-none;
+}
+
+@utility screen-line-bottom-none {
+  @apply after:content-none;
+}
+
 @utility cover-background {
   @apply border-line flex aspect-video items-center justify-center border-x bg-black/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center text-black select-none [--pattern-foreground:var(--color-zinc-950)]/5 before:-top-px after:-bottom-px sm:aspect-24/9 dark:bg-white/0.75 dark:text-white dark:[--pattern-foreground:var(--color-white)]/5;
 }
@@ -331,7 +339,7 @@
   --accent-muted: color-mix(in oklab, var(--muted) 20%, transparent);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(0.274 0.006 286.033);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --selection: oklch(0.985 0 0);
@@ -427,14 +435,6 @@
     background: var(--border);
     border-radius: 5px;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--muted);
-    cursor: pointer;
-  }
-  ::-webkit-scrollbar-thumb:active {
-    background: var(--border);
-    cursor: pointer;
-  }
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
@@ -471,28 +471,4 @@
     width: 1em;
     margin: 0 0.05em 0 0.1em;
   }
-}
-
-@property --top-mask-height {
-  syntax: '<length>';
-  inherits: true;
-  initial-value: 0px;
-}
-
-@property --bottom-mask-height {
-  syntax: '<length>';
-  inherits: true;
-  initial-value: 64px;
-}
-
-@property --left-mask-width {
-  syntax: '<length>';
-  inherits: true;
-  initial-value: 0px;
-}
-
-@property --right-mask-width {
-  syntax: '<length>';
-  inherits: true;
-  initial-value: 64px;
 }

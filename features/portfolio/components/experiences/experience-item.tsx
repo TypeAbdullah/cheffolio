@@ -16,7 +16,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
   return (
     <div
       id={`experience-${experience.id}`}
-      className="screen-line-bottom relative scroll-mt-14 space-y-4 py-4 pr-2 pl-4"
+      className="relative scroll-mt-14 space-y-4 py-4 pr-2 pl-4"
     >
       <DecorIcon className="size-4" position="top-left" />
       <DecorIcon className="size-4" position="top-right" />

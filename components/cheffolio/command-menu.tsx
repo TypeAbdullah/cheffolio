@@ -9,6 +9,7 @@ import {
   BriefcaseBusinessIcon,
   CornerDownLeftIcon,
   DownloadIcon,
+  FileUser,
   LayersIcon,
   MailIcon,
   MonitorIcon,
@@ -135,6 +136,12 @@ export function CommandMenu({
     toast.success(message);
   }, []);
 
+  const handleDownload = useCallback((link: string) => {
+    setOpen(false);
+    haptic();
+    window.open(link, '_self', 'noopener noreferrer');
+  }, []);
+
   const handleSetTheme = useCallback(
     (theme: 'light' | 'dark' | 'system') => {
       setOpen(false);
@@ -179,9 +186,15 @@ export function CommandMenu({
             />
 
             <CommandGroup heading="Personal Info">
-              <CommandItem onSelect={() => null}>
+              <CommandItem onSelect={() => handleOpenLink(USER.resume!, true)}>
+                <FileUser className="text-muted-foreground" />
+                Personal Resume
+              </CommandItem>
+              <CommandItem
+                onSelect={() => handleDownload(USER.resumeDownloadUrl!)}
+              >
                 <DownloadIcon className="text-muted-foreground" />
-                Download CV
+                Download Resume
               </CommandItem>
               <CommandItem
                 onSelect={() => {
