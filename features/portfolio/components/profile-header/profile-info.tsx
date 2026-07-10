@@ -74,13 +74,13 @@ export function ProfileInfo() {
             aria-label="Flip sentences"
           >
             <TextFlip
-              className="font-pixel-square text-muted-foreground text-sm text-balance"
+              className="font-pixel-square shimmer text-muted-foreground text-sm text-balance"
               variants={{
                 initial: { y: -10, opacity: 0 },
                 animate: { y: -1, opacity: 1 },
                 exit: { y: 10, opacity: 0 },
               }}
-              interval={2}
+              interval={2.4}
             >
               {USER.flipSentences}
             </TextFlip>
