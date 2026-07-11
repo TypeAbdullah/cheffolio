@@ -23,16 +23,16 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: USER.socialLinks.linkedin,
   },
   {
-    icon: `${baseUrl}/facebook.webp`,
-    title: 'Facebook',
-    subtitle: 'giabao.67.05',
-    href: USER.socialLinks.facebook,
-  },
-  {
     icon: `${baseUrl}/discord.webp`,
     title: 'Discord',
     subtitle: 'chef.0111',
     href: USER.socialLinks.discord,
+  },
+  {
+    icon: `${baseUrl}/facebook.webp`,
+    title: 'Facebook',
+    subtitle: 'giabao.67.05',
+    href: USER.socialLinks.facebook,
   },
   {
     icon: `${baseUrl}/instagram.webp`,
