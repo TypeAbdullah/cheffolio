@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
 import { Brand } from '@/components/cheffolio/brand';
-import { GithubIcon, LinkedinIcon, XIcon } from '@/components/icons';
+import { GitHubIcon, LinkedinIcon, XIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { FOOTER_SLOGAN, GITHUB_REPO_URL, UTM_PARAMS } from '@/config/site';
 import { USER } from '@/features/portfolio/data/user';
@@ -84,7 +84,7 @@ const socialLinks = [
   {
     href: addQueryParams(USER.socialLinks.github, UTM_PARAMS),
     label: 'Github',
-    icon: <GithubIcon />,
+    icon: <GitHubIcon />,
   },
   {
     href: addQueryParams(USER.socialLinks.linkedin, UTM_PARAMS),

@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
-import { GithubIcon } from '@/components/icons';
+import { GitHubIcon } from '@/components/icons';
 import { DesktopNav } from '@/components/layout/navigation/desktop-nav';
 import { SiteHeaderNav } from '@/components/layout/navigation/site-header-nav';
 import { Button } from '@/components/ui/button';
@@ -41,7 +41,7 @@ export function SiteHeader() {
           }
           nativeButton={false}
         >
-          <GithubIcon aria-hidden="true" />
+          <GitHubIcon aria-hidden="true" />
         </Button>
         <ThemeToggle />
       </div>

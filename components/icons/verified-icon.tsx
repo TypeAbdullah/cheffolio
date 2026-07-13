@@ -1,4 +1,6 @@
-export function VerifiedIcon(props: React.ComponentProps<'svg'>) {
+import type { IconProps } from './type';
+
+export function VerifiedIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
