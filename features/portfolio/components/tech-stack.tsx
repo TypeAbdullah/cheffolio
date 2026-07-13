@@ -1,84 +1,90 @@
-import Image from 'next/image';
-
 import { DecorIcon } from '@/components/cheffolio/decor-icon';
-import {
-  Panel,
-  PanelContent,
-  PanelHeader,
-  PanelTitle,
-} from '@/components/cheffolio/panel';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Panel, PanelHeader, PanelTitle } from '@/components/cheffolio/panel';
 
 import { TECH_STACK } from '../data/tech-stack';
+import type { TechStack as TechStackType } from '../types/tech-stack';
+
+const ID = 'stack';
 
 export function TechStack() {
-  const baseUrl = 'https://res.cloudinary.com/chef0111/image/upload/v1';
-
   return (
-    <Panel id="stack" className="screen-line-bottom-none">
-      <PanelHeader className="relative">
+    <Panel id={ID} className="screen-line-bottom-none">
+      <PanelHeader>
         <PanelTitle>Tech Stack</PanelTitle>
       </PanelHeader>
 
-      <PanelContent className="relative mx-auto">
+      <div className="relative [--badge-height:--spacing(6)] [--col-left-width:--spacing(48)]">
         <DecorIcon className="size-4" position="top-left" />
         <DecorIcon className="size-4" position="top-right" />
         <DecorIcon className="size-4" position="bottom-left" />
         <DecorIcon className="size-4" position="bottom-right" />
 
-        <ul className="grid grid-cols-[repeat(auto-fit,minmax(32px,max-content))] justify-center gap-4 select-none">
-          {TECH_STACK.map((tech) => {
+        <div
+          className="pointer-events-none absolute inset-y-0 left-(--col-left-width) -z-1 w-px bg-[linear-gradient(to_bottom,var(--line)_4px,transparent_2px)] bg-size-[1px_6px] bg-repeat-y max-sm:hidden"
+          aria-hidden
+        />
+
+        {Object.entries(groupByCategory(TECH_STACK)).map(
+          ([category, items], index) => {
+            const categoryId = `${ID}-${category
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/(^-|-$)/g, '')}`;
+
             return (
-              <li key={tech.key} className="flex">
-                <Tooltip>
-                  <TooltipTrigger>
-                    <a
-                      href={tech.href}
-                      target="_blank"
-                      rel="noopener"
-                      aria-label={tech.title}
-                    >
-                      {tech.theme ? (
-                        <>
-                          <Image
-                            src={`${baseUrl}/${tech.key}-light.svg`}
-                            alt={`${tech.title} light icon`}
-                            width={32}
-                            height={32}
-                            className="hidden size-8 object-contain [html.light_&]:block"
-                          />
-                          <Image
-                            src={`${baseUrl}/${tech.key}-dark.svg`}
-                            alt={`${tech.title} dark icon`}
-                            width={32}
-                            height={32}
-                            className="hidden size-8 object-contain [html.dark_&]:block"
-                          />
-                        </>
-                      ) : (
-                        <Image
-                          src={`${baseUrl}/${tech.key}.svg`}
-                          alt={`${tech.title} icon`}
-                          width={32}
-                          height={32}
-                          className="size-8 object-contain"
-                        />
-                      )}
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{tech.title}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </li>
+              <div
+                key={category}
+                className="border-line grid items-start gap-y-2 border-b py-4 last:border-none sm:grid-cols-[var(--col-left-width)_1fr]"
+              >
+                <div
+                  id={categoryId}
+                  className="text-muted-foreground pl-4 text-sm/(--badge-height)"
+                >
+                  <span
+                    className="text-muted-foreground/50 mr-1.5 font-mono select-none"
+                    aria-hidden
+                  >
+                    {(index + 1).toString().padStart(2, '0')}
+                  </span>
+                  {category}
+                </div>
+
+                <ul
+                  aria-labelledby={categoryId}
+                  className="flex flex-wrap gap-1.5 px-4"
+                >
+                  {items.map((item) => {
+                    return (
+                      <li key={item.key} className="flex">
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener"
+                          className="text-foreground inset-ring-border [&_svg]:text-muted-foreground/80 flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full bg-zinc-50/80 px-2 font-mono text-xs inset-ring-1 dark:bg-zinc-900/80 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
+                        >
+                          {item.icon}
+                          {item.title}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             );
-          })}
-        </ul>
-      </PanelContent>
+          }
+        )}
+      </div>
     </Panel>
   );
+}
+
+function groupByCategory(
+  items: TechStackType[]
+): Record<string, TechStackType[]> {
+  return items.reduce<Record<string, TechStackType[]>>((acc, item) => {
+    for (const category of item.categories) {
+      (acc[category] ??= []).push(item);
+    }
+    return acc;
+  }, {});
 }

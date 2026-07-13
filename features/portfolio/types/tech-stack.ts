@@ -3,5 +3,5 @@ export type TechStack = {
   title: string;
   href: string;
   categories: string[];
-  theme?: boolean;
+  icon: React.ReactElement;
 };
