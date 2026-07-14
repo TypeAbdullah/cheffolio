@@ -7,6 +7,7 @@ import {
   IntroItemContent,
   IntroItemIcon,
 } from '@/components/cheffolio/intro-item';
+import { InlineScript } from '@/components/inline-script';
 import {
   Tooltip,
   TooltipContent,
@@ -89,10 +90,7 @@ export function LocalTimeItem({ timeZone }: CurrentLocalTimeItemProps) {
         </span>
       </IntroItemContent>
 
-      <script
-        dangerouslySetInnerHTML={{ __html: getInlineScript(timeZone, ids) }}
-        suppressHydrationWarning
-      />
+      <InlineScript html={getInlineScript(timeZone, ids)} />
     </IntroItem>
   );
 }
