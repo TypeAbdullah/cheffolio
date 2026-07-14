@@ -8,13 +8,13 @@ import Script from 'next/script';
 import type { WebSite, WithContext } from 'schema-dts';
 
 import { ScrollToTop } from '@/components/cheffolio/scroll-to-top';
+import { JsonLdScript } from '@/components/json-ld';
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { fontVariables } from '@/config/font';
 import { META_THEME_COLORS, SITE_INFO, X_USERNAME } from '@/config/site';
 import { ThemeProvider } from '@/context/theme-provider';
 import { USER } from '@/features/portfolio/data/user';
-import { JsonLdScript } from '@/lib/json-ld';
 import { cn } from '@/lib/utils';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });

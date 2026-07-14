@@ -1,3 +1,5 @@
+import { InlineScript } from '@/components/inline-script';
+
 /**
  * Serialized via `.toString()` into the pre-hydration script, so it must stay
  * self-contained: globals and arguments only, no module-scope references.
@@ -25,11 +27,8 @@ type RevealEncodedTextProps = {
  */
 export function RevealEncodedText({ id, text }: RevealEncodedTextProps) {
   return (
-    <script
-      suppressHydrationWarning
-      dangerouslySetInnerHTML={{
-        __html: `(${revealEncodedText.toString()})(${JSON.stringify(id)}, ${JSON.stringify(text)})`,
-      }}
+    <InlineScript
+      html={`(${revealEncodedText.toString()})(${JSON.stringify(id)},${JSON.stringify(text)})`}
     />
   );
 }
