@@ -6,7 +6,6 @@ import {
   PanelHeader,
   PanelTitle,
 } from '@/components/cheffolio/panel';
-import { Prose } from '@/components/ui/typography';
 
 import { USER } from '../data/user';
 import { GitHubContributions } from './github-contributions';
@@ -21,14 +20,12 @@ export function About() {
         <PanelTitle>About</PanelTitle>
       </PanelHeader>
 
-      <PanelContent className="relative">
+      <PanelContent className="typeset typeset-description relative py-(--typeset-flow)">
+        <Markdown>{USER.about}</Markdown>
         <DecorIcon className="size-4" position="top-left" />
         <DecorIcon className="size-4" position="top-right" />
         <DecorIcon className="size-4" position="bottom-left" />
         <DecorIcon className="size-4" position="bottom-right" />
-        <Prose>
-          <Markdown>{USER.about}</Markdown>
-        </Prose>
       </PanelContent>
       <GitHubContributions />
     </Panel>

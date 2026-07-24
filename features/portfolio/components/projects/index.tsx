@@ -24,7 +24,7 @@ export function Projects() {
         </PanelTitle>
       </PanelHeader>
 
-      <PanelContent className="relative px-0 py-px">
+      <PanelContent className="relative p-px">
         <DecorIcon className="size-4" position="top-left" />
         <DecorIcon className="size-4" position="top-right" />
         <DecorIcon className="size-4" position="bottom-left" />

@@ -25,34 +25,38 @@ export function CollapsibleList<T>({
   renderItem: (item: T) => React.ReactNode;
 }) {
   return (
-    <Collapsible className={cn('group/collapsible', className)}>
-      <div>
+    <Collapsible
+      className={cn(
+        'group/collapsible [&>ul:first-child>li:first-child>*]:border-t-0',
+        className
+      )}
+    >
+      <ul>
         {items.slice(0, max).map((item, index) => (
-          <React.Fragment
+          <li
             key={
               typeof keyExtractor === 'function' ? keyExtractor(item) : index
             }
           >
             {renderItem(item)}
-          </React.Fragment>
+          </li>
         ))}
-      </div>
+      </ul>
 
-      {items.length > max && (
-        <CollapsibleContent>
-          {items.slice(max).map((item, index) => (
-            <React.Fragment
-              key={
-                typeof keyExtractor === 'function'
-                  ? keyExtractor(item)
-                  : max + index
-              }
-            >
-              {renderItem(item)}
-            </React.Fragment>
-          ))}
-        </CollapsibleContent>
-      )}
+      <CollapsibleContent render={<ul />}>
+        {items.slice(max).map((item, index) => (
+          <li
+            key={
+              typeof keyExtractor === 'function'
+                ? keyExtractor(item)
+                : max + index
+            }
+            className="border-line border-b"
+          >
+            {renderItem(item)}
+          </li>
+        ))}
+      </CollapsibleContent>
 
       {items.length > max && (
         <div
