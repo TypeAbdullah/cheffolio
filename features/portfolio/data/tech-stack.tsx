@@ -383,7 +383,7 @@ export const TECH_STACK: TechStack[] = [
     key: 'github',
     title: 'GitHub',
     href: 'https://github.com',
-    icon: <GitHubIcon />,
+    icon: <GitHubIcon className="fill-black dark:fill-white" />,
     categories: ['Workflow & AI'],
   },
   {
