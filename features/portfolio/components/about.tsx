@@ -20,12 +20,12 @@ export function About() {
         <PanelTitle>About</PanelTitle>
       </PanelHeader>
 
-      <PanelContent className="typeset typeset-description py-(--typeset-flow) pt-0">
+      <PanelContent className="typeset typeset-description relative py-(--typeset-flow)">
+        <Markdown>{USER.about}</Markdown>
         <DecorIcon className="size-4" position="top-left" />
         <DecorIcon className="size-4" position="top-right" />
         <DecorIcon className="size-4" position="bottom-left" />
         <DecorIcon className="size-4" position="bottom-right" />
-        <Markdown>{USER.about}</Markdown>
       </PanelContent>
       <GitHubContributions />
     </Panel>
