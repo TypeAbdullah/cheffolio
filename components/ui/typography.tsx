@@ -12,19 +12,17 @@ function Prose({
 }: useRender.ComponentProps<'div'>) {
   return useRender({
     defaultTagName: 'div',
+    render,
     props: mergeProps<'div'>(
       {
+        'data-slot': 'prose',
         className: cn(
-          'prose prose-chef prose-zinc dark:prose-invert max-w-none leading-normal',
+          'prose max-w-none prose-chef prose-zinc dark:prose-invert',
           className
         ),
-      },
+      } as React.ComponentProps<'div'>,
       props
     ),
-    render,
-    state: {
-      slot: 'prose',
-    },
   });
 }
 

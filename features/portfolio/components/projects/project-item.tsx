@@ -13,7 +13,6 @@ import {
   CollapsibleChevronsIcon,
 } from '@/components/ui/collapsible-animated';
 import { Tag } from '@/components/ui/tag';
-import { Prose } from '@/components/ui/typography';
 import { UTM_PARAMS } from '@/config/site';
 import type { Project } from '@/features/portfolio/types/projects';
 import { cn } from '@/lib/utils';
@@ -109,9 +108,9 @@ export function ProjectItem({
       <CollapsibleContent>
         <div className="border-line space-y-4 p-4 pt-2">
           {project.description && (
-            <Prose>
+            <div className="typeset typeset-description">
               <Markdown>{project.description}</Markdown>
-            </Prose>
+            </div>
           )}
 
           {project.skills.length > 0 && (

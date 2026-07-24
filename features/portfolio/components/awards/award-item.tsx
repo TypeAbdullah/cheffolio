@@ -14,7 +14,6 @@ import {
   CollapsibleChevronsIcon,
 } from '@/components/ui/collapsible-animated';
 import { Separator } from '@/components/ui/separator';
-import { Prose } from '@/components/ui/typography';
 import { UTM_PARAMS } from '@/config/site';
 import type { Award } from '@/features/portfolio/types/awards';
 import { addQueryParams } from '@/utils/url';
@@ -110,9 +109,9 @@ export function AwardItem({
 
       {canExpand && (
         <CollapsibleContent>
-          <Prose className="border-line border-t p-4">
+          <div className="typeset typeset-description border-line border-t p-4">
             <Markdown>{award.description}</Markdown>
-          </Prose>
+          </div>
         </CollapsibleContent>
       )}
     </Collapsible>

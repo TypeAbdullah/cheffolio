@@ -18,7 +18,6 @@ import {
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Tag } from '@/components/ui/tag';
-import { Prose } from '@/components/ui/typography';
 import type { ExperiencePosition } from '@/features/portfolio/types/experiences';
 import { cn } from '@/lib/utils';
 
@@ -103,9 +102,9 @@ export function ExperiencePositionItem({
 
       <CollapsibleContent>
         {position.description && (
-          <Prose className="pt-2 pl-9 text-pretty">
+          <div className="typeset typeset-description pt-3 pb-1 pl-9">
             <Markdown>{position.description}</Markdown>
-          </Prose>
+          </div>
         )}
       </CollapsibleContent>
 
