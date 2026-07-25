@@ -51,7 +51,6 @@ export function CollapsibleList<T>({
                 ? keyExtractor(item)
                 : max + index
             }
-            className="border-line border-b"
           >
             {renderItem(item)}
           </li>
