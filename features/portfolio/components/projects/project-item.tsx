@@ -106,7 +106,7 @@ export function ProjectItem({
       </div>
 
       <CollapsibleContent>
-        <div className="border-line space-y-4 p-4 pt-2">
+        <div className="space-y-4 px-4 py-2">
           {project.description && (
             <div className="typeset typeset-description">
               <Markdown>{project.description}</Markdown>
