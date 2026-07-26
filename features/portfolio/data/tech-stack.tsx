@@ -301,7 +301,7 @@ export const TECH_STACK: TechStack[] = [
         viewBox="0 0 24 24"
         height="24"
         width="24"
-        className="fill-[#93C129] dark:fill-[#C5F74F]"
+        className="fill-black dark:fill-[#C5F74F]"
         aria-hidden
       >
         <path
