@@ -229,7 +229,7 @@ export const TECH_STACK: TechStack[] = [
   },
   {
     key: 'query',
-    title: 'React Query',
+    title: 'TanStack Query',
     href: 'https://tanstack.com/query/latest',
     icon: <ReactQueryIcon />,
     categories: ['Frontend'],
