@@ -10,6 +10,10 @@
     "strings": "on"
   },
   "tailwindCSS.classFunctions": ["cva", "cn"],
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]?([^\"'`]+)[\"'`]?"],
+    ["cn\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
   "files.associations": {
     "*.css": "tailwindcss"
   },
