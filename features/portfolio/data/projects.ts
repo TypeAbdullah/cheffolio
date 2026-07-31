@@ -2,7 +2,7 @@ import { GITHUB_REPO_URL } from '@/config/site';
 
 import type { Project } from '../types/projects';
 
-const baseUrl = 'https://res.cloudinary.com/chef0111/image/upload';
+const baseUrl = 'https://res.cloudinary.com/chef0111/image/v1/upload';
 
 export const PROJECTS: Project[] = [
   {
