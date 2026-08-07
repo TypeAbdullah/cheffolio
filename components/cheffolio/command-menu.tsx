@@ -4,7 +4,6 @@ import { useHotkey } from '@tanstack/react-hotkeys';
 import { useCommandState } from 'cmdk';
 import type { LucideProps } from 'lucide-react';
 import {
-  AwardIcon,
   BoxIcon,
   BriefcaseBusinessIcon,
   CornerDownLeftIcon,
@@ -77,11 +76,6 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     title: 'Projects',
     href: '#projects',
     icon: BoxIcon,
-  },
-  {
-    title: 'Honors & Awards',
-    href: '#awards',
-    icon: AwardIcon,
   },
 ];
 

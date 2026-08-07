@@ -1,9 +1,4 @@
-import {
-  AwardIcon,
-  BoxIcon,
-  BriefcaseBusiness,
-  TextInitial,
-} from 'lucide-react';
+import { BoxIcon, BriefcaseBusiness, TextInitial } from 'lucide-react';
 
 import type { NavItem } from '@/components/layout/navigation/types/nav';
 import { USER } from '@/features/portfolio/data/user';
@@ -13,7 +8,7 @@ export const SITE_INFO = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://giabao.dev',
   ogImage: USER.ogImage,
   description:
-    'Gia Bảo · Student Software Engineer from Vietnam. Love coding catchy things.',
+    'Abdullah · Student Software from Bangladesh. Love coding catchy things.',
   keywords: USER.keywords,
 };
 
@@ -35,10 +30,6 @@ export const MAIN_NAV: NavItem[] = [
     title: 'Projects',
     href: '#projects',
   },
-  {
-    title: 'Awards',
-    href: '#awards',
-  },
 ];
 
 export const MOBILE_NAV: NavItem[] = [
@@ -56,11 +47,6 @@ export const MOBILE_NAV: NavItem[] = [
     title: 'Projects',
     href: '#projects',
     icon: BoxIcon,
-  },
-  {
-    title: 'Awards',
-    href: '#awards',
-    icon: AwardIcon,
   },
 ];
 
