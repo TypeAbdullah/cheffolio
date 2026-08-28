@@ -57,6 +57,7 @@ export const USER: User = {
     'abdullah dev',
     'TypeAbdullah portfolio',
     'dev portfolio',
+    'github',
   ],
   dateCreated: '2026-03-22',
 };
