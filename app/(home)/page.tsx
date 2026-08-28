@@ -4,7 +4,6 @@ import type { ProfilePage, WithContext } from 'schema-dts';
 import { TailwindSeparator } from '@/components/cheffolio/tailwind-separator';
 import { JsonLdScript } from '@/components/json-ld';
 import { About } from '@/features/portfolio/components/about';
-import { Awards } from '@/features/portfolio/components/awards';
 import { Experiences } from '@/features/portfolio/components/experiences';
 import { Overview } from '@/features/portfolio/components/overview';
 import { ProfileHeader } from '@/features/portfolio/components/profile-header';
@@ -45,9 +44,6 @@ export default function Page() {
         <TailwindSeparator />
 
         <Projects />
-        <TailwindSeparator />
-
-        <Awards />
         <TailwindSeparator />
       </div>
     </>

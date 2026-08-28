@@ -5,10 +5,10 @@ import { USER } from '@/features/portfolio/data/user';
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://giabao.dev',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://abdullah.dpdns.org',
   ogImage: USER.ogImage,
   description:
-    'Abdullah · Student Software from Bangladesh. Love coding catchy things.',
+    'Abdullah · Software Developer from Bangladesh. Love coding catchy things.',
   keywords: USER.keywords,
 };
 
@@ -51,13 +51,13 @@ export const MOBILE_NAV: NavItem[] = [
 ];
 
 export const UTM_PARAMS = {
-  utm_source: 'giabao.dev',
+  utm_source: 'abdullah.dpdns.org',
 };
 
-export const GITHUB_REPO_URL = 'https://github.com/chef0111/cheffolio';
+export const GITHUB_REPO_URL = 'https://github.com/TypeAbdullah';
 
-export const GITHUB_USERNAME = 'chef0111';
-export const X_USERNAME = '@cheff0111';
+export const GITHUB_USERNAME = 'TypeAbdullah';
+export const X_USERNAME = '@becauseunknown';
 
 export const SOUNDS = {
   toggle: 'https://res.cloudinary.com/chef0111/video/upload/toggle.mp3',

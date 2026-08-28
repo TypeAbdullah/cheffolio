@@ -1,22 +1,22 @@
 {
-  "short_name": "giabao.dev",
-  "name": "giabao.dev",
-  "description": "A minimalist, shadcn/ui-inspired dev portfolio of @chef0111.",
+  "short_name": "abdullah.dpdns.org",
+  "name": "Abdullah Portfolio",
+  "description": "A minimalist, shadcn/ui-inspired dev portfolio of @TypeAbdullah.",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/chef0111/image/upload/cheffolio.svg",
+      "src": "/cheffolio/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any"
     },
     {
-      "src": "https://res.cloudinary.com/chef0111/image/upload/icon-192x192.png",
+      "src": "https://avatars.githubusercontent.com/u/143931418?v=4",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "https://res.cloudinary.com/chef0111/image/upload/icon-512x512.png",
+      "src": "https://avatars.githubusercontent.com/u/143931418?v=4",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"

@@ -2,11 +2,11 @@
   "name": "cheffolio",
   "version": "0.1.0",
   "description": "A minimal, shadcn/ui-inspired dev portfolio.",
-  "homepage": "https://giabao.dev",
+  "homepage": "https://abdullah.dpdns.org",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chef0111/cheffolio.git"
+    "url": "git+https://github.com/TypeAbdullah/cheffolio.git"
   },
   "scripts": {
     "dev": "portless cheffolio next dev",

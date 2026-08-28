@@ -18,7 +18,7 @@ export function ProfileCover() {
             className="h-auto w-28 translate-y-5 transition duration-300 group-hover/canvas:translate-y-0 group-data-[expanded=true]/canvas:translate-y-0 sm:w-32"
           />
           <Label className="font-pixel text-lg opacity-0 transition duration-300 group-hover/canvas:opacity-100 group-data-[expanded=true]/canvas:opacity-100 sm:text-xl">
-            giabao.dev
+            abdullah.dpdns.org
           </Label>
         </div>
       </div>

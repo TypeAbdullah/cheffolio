@@ -36,17 +36,17 @@ export const metadata: Metadata = {
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: 'chef0111',
+      name: USER.displayName,
       url: SITE_INFO.url,
     },
   ],
-  creator: 'chef0111',
+  creator: USER.displayName,
   openGraph: {
     siteName: SITE_INFO.name,
     url: '/',
     type: 'profile',
     locale: 'en_US',
-    alternateLocale: ['vi_VN'],
+    alternateLocale: ['en_US'],
     firstName: USER.firstName,
     lastName: USER.lastName,
     username: USER.username,
@@ -69,24 +69,24 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: 'https://res.cloudinary.com/chef0111/image/upload/favicon.ico',
-        sizes: '256x256',
+        url: '/favicon.ico',
+        sizes: 'any',
       },
       {
-        url: 'https://res.cloudinary.com/chef0111/image/upload/favicon-light.svg',
+        url: '/cheffolio/favicon.svg',
         sizes: 'any',
         type: 'image/svg+xml',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: 'https://res.cloudinary.com/chef0111/image/upload/favicon-dark.svg',
+        url: '/cheffolio/favicon-dark.svg',
         sizes: 'any',
         type: 'image/svg+xml',
         media: '(prefers-color-scheme: dark)',
       },
     ],
     apple: {
-      url: 'https://res.cloudinary.com/chef0111/image/upload/apple-touch-icon.png',
+      url: 'https://avatars.githubusercontent.com/u/143931418?v=4',
       type: 'image/png',
       sizes: '180x180',
     },
