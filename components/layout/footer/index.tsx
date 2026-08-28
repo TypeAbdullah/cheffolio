@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Brand } from '@/components/cheffolio/brand';
 import { GitHubIcon, LinkedinIcon, XIcon } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import { FOOTER_SLOGAN, GITHUB_REPO_URL, UTM_PARAMS } from '@/config/site';
+import { FOOTER_SLOGAN, UTM_PARAMS } from '@/config/site';
 import { USER } from '@/features/portfolio/data/user';
 import { addQueryParams } from '@/utils/url';
 
@@ -41,17 +41,6 @@ export function SiteFooter() {
                 </Button>
               ))}
             </div>
-            <p className="text-muted-foreground text-center font-mono text-sm text-balance">
-              Source code available on{' '}
-              <a
-                href={addQueryParams(GITHUB_REPO_URL, UTM_PARAMS)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline text-foreground font-medium"
-              >
-                GitHub
-              </a>
-            </p>
           </div>
 
           <ChainOfSlogan
