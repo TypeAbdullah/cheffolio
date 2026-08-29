@@ -30,31 +30,30 @@ export const PROJECTS: Project[] = [
     isExpanded: true,
   },
   {
-    id: 'ai-userbot',
-    title: 'AI-Userbot',
+    id: 'nomdb',
+    title: 'NomDB',
     period: {
       start: '01.2026',
     },
-    link: 'https://github.com/TypeAbdullah/AI-Userbot',
+    link: 'https://github.com/TypeAbdullah/NomDB',
     skills: [
-      'Node.js 22',
-      'TypeScript',
-      'MTProto',
-      '@mtcute/node',
-      'MongoDB',
-      'Mongoose',
-      'AI Agents',
-      'OpenRouter',
-      'Groq',
-      'Anthropic',
-      'OpenAI',
-      'DeepSeek',
-      'Zod',
+      'Python 3.13',
+      'asyncio',
+      'In-Memory Database',
+      'RESP2 / RESP3',
+      'TCP Server',
+      'SkipList',
+      'AOF / RDB Persistence',
+      'Pub/Sub',
+      'Replication',
+      'Clustering',
+      'PyPI',
+      'Web Dashboard',
     ],
-    description: `A production-grade, highly modular autonomous AI Telegram userbot agent operating via MTProto.
-- **Real MTProto Userbot**: Built with \`@mtcute/node\` and \`@mtcute/dispatcher\` featuring FloodWait auto-recovery, session persistence, and full user-level Telegram action execution.
-- **11+ AI Providers & Intelligent Model Routing**: Unified interface across OpenRouter, Groq, Anthropic, Gemini, OpenAI, DeepSeek, and local LLMs with task-specific model routing and cascading multi-provider failover.
-- **Extensible Tool Ecosystem & Security**: 50+ granular tools with strict Zod validation, 4-tier RBAC system, persistent chat memory with context compression, and MongoDB-backed cron workflows.
+    description: `A high-performance in-memory key-value database and TCP server built from scratch in pure Python and asyncio — zero Redis wrappers, zero C dependencies.
+- **RESP2/RESP3 Protocol & Multi-Mode**: Compatible with Redis clients, runnable as a standalone TCP server, embedded library (\`import nomdb\`), self-hosted instance, or real-time Web Dashboard.
+- **Custom Native Data Structures**: Pure Python SkipList for Sorted Sets with $O(\\log N)$ rank/range queries, strings, hashes, lists, sets, and dual active/lazy timestamp min-heap expiration.
+- **Persistence, Pub/Sub & Cluster Routing**: AOF rewriting + binary RDB snapshots with SHA-256 checks, transactions (\`MULTI\`/\`EXEC\`/\`WATCH\`), replication with circular ring buffers (\`PSYNC\`), and 16,384 CRC16 cluster routing.
 `,
     isExpanded: true,
   },
