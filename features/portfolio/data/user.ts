@@ -15,8 +15,9 @@ export const USER: User = {
   email: 'b2duYXBhZXh0cmFAZ21haWwuY29t', // base64 encoded (ognapaextra@gmail.com)
   website: 'https://abdullah.dpdns.org',
   jobTitle: 'Software Developer',
-  resume: '#',
-  resumeDownloadUrl: '#',
+  resume: 'https://pub-cb34b1d0837343229f22dce6a2c1b493.r2.dev/abdullah-CV.pdf',
+  resumeDownloadUrl:
+    'https://pub-cb34b1d0837343229f22dce6a2c1b493.r2.dev/abdullah-CV.pdf',
   jobs: [
     {
       title: 'Developer',
