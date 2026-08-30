@@ -57,4 +57,30 @@ export const PROJECTS: Project[] = [
 `,
     isExpanded: true,
   },
+  {
+    id: 'nomtp',
+    title: 'NOMTP',
+    period: {
+      start: '02.2026',
+    },
+    link: 'https://github.com/TypeAbdullah/nomtp',
+    skills: [
+      'Python 3.12+',
+      'Binary Wire Protocol',
+      'TCP/TLS',
+      'QUIC',
+      'Merkle Tree Integrity',
+      'Parallel Streaming',
+      'Resumable Transfers',
+      'Content Addressing',
+      'zstd / gzip',
+      'Network Protocols',
+    ],
+    description: `A modern, high-throughput, resilient application-layer binary protocol engineered for file, media, object, and streaming data transfer over secure TCP+TLS and QUIC transports.
+- **Binary Wire Protocol**: Fixed 32-byte header with zero JSON overhead, CRC16 header verification, and Big-Endian encoding.
+- **Native Resumability & Merkle Trees**: Sparse transfer maps, chunk bitmaps, and disk journals enabling resume after network loss, paired with Merkle tree hashing (CRC32C / SHA-256 / BLAKE3) for incremental validation.
+- **Parallel Streaming & Deduplication**: Multiplexed concurrent chunk streams over pooled connections, cryptographic content digests preventing duplicate retransmission, and adaptive compression (zstd/gzip).
+`,
+    isExpanded: true,
+  },
 ];
